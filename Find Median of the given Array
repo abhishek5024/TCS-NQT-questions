@@ -1,0 +1,19 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int arr[]={4,7,1,2,5,6};
+    int n = 6;
+    sort(arr, arr+n);
+  float sum=0;
+ if(n%2==0){
+   sum = arr[(n/2)-1]+arr[(n/2)];
+  cout<<sum/2;
+ }
+ else{
+  sum = arr[(n/2)]+arr[(n/2)+1];
+  cout<<sum/2;
+ }
+  return 0;
+}
