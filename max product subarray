@@ -1,3 +1,5 @@
+O(N*N)
+
 #include <iostream>
 #include<climits>
 using namespace std;
@@ -20,5 +22,32 @@ int main() {
     }
     cout<<maxi;
 
+    return 0;
+}
+
+
+//O(N)
+
+
+#include <iostream>
+#include<climits>
+using namespace std;
+
+int main() {
+    int arr[]={1,2,3,4,5,0};
+    int n=6;
+   int prefix;
+   int suffix;
+    int maxi=INT_MIN;
+    for(int i=0;i<n;i++)
+    {
+        if(prefix==0) prefix=1;
+        if(suffix==0) suffix =1;
+        prefix = prefix*arr[i];
+        suffix = suffix*arr[n-i-1];
+        maxi = max(maxi, max(prefix,suffix));
+    }
+    cout<<maxi;
+    
     return 0;
 }
